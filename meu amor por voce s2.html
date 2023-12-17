@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column; /* Adiciona uma coluna flexível para centralizar verticalmente */
+      height: 100vh;
+      margin: 0;
+      background-color: palevioletred; /* Cor de fundo (exemplo: azul claro) */
+    }
+
+    #heart-btn {
+      cursor: pointer;
+      background: transparent;
+      border: none;
+      font-size: 100px;
+      outline: none;
+      animation: pulse 1s infinite alternate;
+    }
+
+    #hidden-photo {
+      display: none;
+      max-width: 100%;
+      height: auto;
+    }
+
+    #photo-text {
+      display: none;
+      margin-top: 20px; /* Espaçamento entre a imagem e o texto */
+    }
+
+    @keyframes pulse {
+      to {
+        transform: scale(1.2);
+      }
+    }
+  </style>
+</head>
+<body>
+
+<button id="heart-btn" onclick="showPhoto()">💌</button>
+<img id="hidden-photo" src="gato teste.jpg" alt="Sua Foto">
+<h2 id="photo-text">Texto abaixo da imagem</h2>
+
+<script>
+  function showPhoto() {
+    var heartBtn = document.getElementById('heart-btn');
+    var photo = document.getElementById('hidden-photo');
+    var photoText = document.getElementById('photo-text');
+
+    // Oculta o coração
+    heartBtn.style.display = 'none';
+
+    // Exibe a foto
+    photo.style.display = 'block';
+
+    // Exibe o texto abaixo da imagem
+    photoText.style.display = 'block';
+  }
+</script>
+
+</body>
+</html>
